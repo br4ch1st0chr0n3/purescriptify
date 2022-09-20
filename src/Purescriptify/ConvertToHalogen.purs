@@ -74,7 +74,7 @@ convert (HtmlInput html) = do
             Right converted ->
               if converted /= "" then do
                 let nodeName = "node" <> show nodeIx
-                    nodeType = nodeName <> " :: " <> "forall (a :: Type) (b :: Type). HTML a b"
+                    nodeType = nodeName <> " :: " <> "forall (a :: Type) (b :: Type). HH.HTML a b"
                 moduleSoFar <> "\n" <> nodeType <> "\n" <> nodeName <> " = " <> converted
               else moduleSoFar
             Left err ->
